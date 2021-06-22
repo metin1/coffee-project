@@ -3,39 +3,22 @@ const Joi = require("joi");
 module.exports = {
   validateBody: schema => {
     return (req, res, next) => {
-      const { error, value } = Joi.validate(req.body, schema);
+      const schema = Joi.object()
+        .keys({
+          title: Joi.string().required(),
+          description: Joi.string(),
+          category: Joi.string().required(),
+          ingredients: Joi.array(),
+        })
+        .required()
 
-      if (error) {
-        return res.status(400).json(error.details[0].message);
+      const validation = schema.validate(req.body)
+      if (!validation.error) {
+        req.body = validation.value;
+      } else {
+        req.body = null
       }
-
-      if (!req.value) {
-        req.value = {};
-      }
-      req.value["body"] = value;
-      next();
+      next()
     };
   },
-
-  validateParamCategory: schema => {
-    return (req, res, next) => {
-
-      const { error, value } = Joi.validate(req.params.category.toString(), schema);
-
-      if (error) {
-        return res.status(400).json(error.details[0].message);
-      }
-
-      if (!req.value) {
-        req.value = {};
-      }
-      req.value["params"] = value;
-      next();
-    };
-  },
-
-
-  schemas: {
-    category: Joi.required()
-  }
 };
