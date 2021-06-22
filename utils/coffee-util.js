@@ -1,6 +1,5 @@
 
 const fs = require('fs');
-const { date } = require('joi');
 const path = require('path');
 
 const coffeesDBFile = path.join(process.cwd(), '/db', '/coffees.json');
@@ -12,7 +11,10 @@ function getCoffeesData() {
 
 function getCoffeeById(coffeeId) {
   const coffeesData = getCoffeesData();
-  // if no record return undefined
+  // if no record return initial record
+  if (!coffeeId) {
+    return coffeesData[0]
+  }
   return coffeesData.find(coffee => coffee.id === +coffeeId)
 }
 

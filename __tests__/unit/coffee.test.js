@@ -2,7 +2,6 @@ const app = require('../../server'); // Link to your server file
 const supertest = require("supertest");
 const request = supertest(app);
 const coffee = require('../../db/coffees.json');
-const { describe } = require('yargs');
 
 function getCoffeeCategories() {
     var coffeeCategories = [];
@@ -13,23 +12,55 @@ function getCoffeeCategories() {
     return coffeeCategories;
 }
 
+function getMaxIdFromFile() {
+  let max = 0
+  for (let i = 0; i < coffee.length; i++) {
+    const element = coffee[i];
+    if (parseInt(element.id)> max) max = parseInt(element.id)
+  }
+  return max
+}
 
+function getFirstRecord() {
+    return coffee[0]
+}
+
+const validData = {
+    "title": "Latte",
+    "description": "As the most pot",
+    "ingredients": ["Espresso", "Steamed Milk"],
+    "category": "hot"
+}
+
+const invalidData = {
+    "title": "Latte3",
+    "ingredients": "Espresso",
+    "category": "hot"
+}
+
+// GET REQUESTS
 it("should return all coffee array as expected", async () => {
     const response = await request.get("/coffee/all");
     expect(response.status).toBe(200);
     expect(response.body.length).toBe(coffee.length);
 });
 
-it("should return only one coffee info", async () => {
-    const response = await request.get("/coffee/1");
+it("should return only one coffee info request without id", async () => {
+    const response = await request.get(`/coffee`);
     expect(response.status).toBe(200);
     expect(response.body).toStrictEqual(coffee[0]);
 });
 
+it("should return only one coffee info request with id", async () => {
+    const response = await request.get(`/coffee/${coffee[2].id}`);
+    expect(response.status).toBe(200);
+    expect(response.body).toStrictEqual(coffee[2]);
+});
+
 it("should return error message for invalid coffee id", async () => {
-    const response = await request.get(`/coffee/${coffee.length+1}`);
-    expect(response.status).toBe(400);
-    expect(response.body.errors).toBe("Coffee not found with this id");
+    const response = await request.get(`/coffee/${getMaxIdFromFile()+1}`);
+    expect(response.status).toBe(404);
+    expect(response.body.error).toBe("Not Found");
 });
 
 it("should return coffees according to category", async () => {
@@ -56,3 +87,50 @@ it("should return all coffee categories array as expected", async () => {
     expect(response.status).toBe(200);
     expect(response.body).toStrictEqual(getCoffeeCategories());
 })
+
+// PUT REQUESTS
+it("should update with valid data", async () => {
+    const response = await request.put("/coffee/2").send(validData);
+    expect(response.status).toBe(200);
+    expect(response.body).toEqual(expect.objectContaining(validData));
+});
+
+it("should return error message at update with invalid data", async () => {
+    const response = await request.put("/coffee/2").send(invalidData);
+    expect(response.status).toBe(400);
+    expect(response.body.error).toBe("Invalid Input");
+});
+
+it("should return error message at update for invalid id", async () => {
+    const response = await request.put(`/coffee/${getMaxIdFromFile()+1}`).send(validData);
+    expect(response.status).toBe(404);
+    expect(response.body.error).toBe("Not Found");
+});
+
+
+
+// POST REQUESTS
+it("should create with valid data", async () => {
+    const response = await request.post("/coffee").send(validData);
+    expect(response.status).toBe(201);
+    expect(response.body).toEqual(expect.objectContaining(validData));
+});
+
+it("should return error message when create with invalid data", async () => {
+    const response = await request.post("/coffee").send(invalidData);
+    expect(response.status).toBe(400);
+    expect(response.body.error).toBe("Invalid Input");
+});
+
+// DELETE REQUESTS
+it("should delete with valid id", async () => {
+    const response = await request.delete(`/coffee/${coffee[coffee.length-1].id}`);
+    expect(response.status).toBe(204);
+    expect(response.body).toEqual({});
+});
+
+it("should return error message when delete with invalid id", async () => {
+    const response = await request.delete(`/coffee/${getMaxIdFromFile()+12}`);
+    expect(response.status).toBe(404);
+    expect(response.body.error).toBe("Not Found");
+});
