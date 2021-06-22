@@ -1,0 +1,57 @@
+######################
+# Project Specific
+######################
+
+build
+debug.log
+
+######################
+# Node
+######################
+/node/
+node_tmp/
+node_modules/
+client/node_modules/
+npm-debug.log.*
+
+######################
+# SASS
+######################
+.sass-cache/
+
+######################
+# Visual Studio Code
+######################
+.vscode/
+
+# Folder config file
+Desktop.ini
+
+######################
+# Mac OSX
+######################
+.DS_Store
+.svn
+
+# Thumbnails
+._*
+
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+
+######################
+# Directories
+######################
+/bin/
+/deploy/
+
+######################
+# Logs
+######################
+*.log*
+
+######################
+# ESLint
+######################
+.eslintcache
