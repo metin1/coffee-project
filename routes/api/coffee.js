@@ -4,7 +4,8 @@ const {
   getCoffees,
   getCoffeesById,
   updateCoffeeById,
-  createCoffeeRecord
+  createCoffeeRecord,
+  deleteCoffeeRecord
 } = require("../../controllers/coffeeController");
 const { validateBody } = require("../../middleware/validator");
 
@@ -12,5 +13,6 @@ router.get("/all", getCoffees);
 router.get("/:id", getCoffeesById);
 router.put("/:id", validateBody(), updateCoffeeById);
 router.post("/", validateBody(), createCoffeeRecord);
+router.delete("/:id", deleteCoffeeRecord);
 
 module.exports = router;
