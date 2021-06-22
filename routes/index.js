@@ -5,7 +5,7 @@ const category = require("../routes/api/category");
 const coffee = require("../routes/api/coffee");
 
 module.exports = app => {
-  app.use("/api/categories", categories);
-  app.use("/api/category", category);
-  app.use("/api/coffee", coffee);
+  app.use("/categories", categories);
+  app.use("/category", category);
+  app.use("/coffee", coffee);
 }

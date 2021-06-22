@@ -19,11 +19,6 @@ if (process.env.NODE_ENV === 'production') {
 		res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
 	});
 }
-// console.log(getAllCoffees().length === 26)
-// console.log(getCoffeesByCategory("hot").length === 20)
-// console.log(getCoffeesByCategory("iced").length === 6)
-// console.log(getCoffeeById(3).length === 1)
-// console.log(getCoffeeCategories().length === 2)
 
 // Start listening at port 5000
 const PORT = process.env.PORT || 5000;
