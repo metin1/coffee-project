@@ -1,5 +1,6 @@
 
 const fs = require('fs');
+const { date } = require('joi');
 const path = require('path');
 
 const coffeesDBFile = path.join(process.cwd(), '/db', '/coffees.json');
@@ -12,6 +13,37 @@ function getCoffeesData() {
 function getCoffeeById(coffeeId) {
   const coffeesData = getCoffeesData();
   return coffeesData.find(coffee => coffee.id === +coffeeId)
+}
+
+function putCoffeeById(coffeeId, data) {
+  const coffeesData = getCoffeesData();
+  const coffeeIndex = coffeesData.findIndex(coffee => coffee.id.toString() === coffeeId)
+  if (coffeeIndex === -1) {
+    return "Not Found"
+  }
+  const newCoffeeFile = coffeesData.map(
+    coffee => coffee.id.toString() === coffeeId ?
+    {
+      ...coffee,
+      ...data,
+        updatedTime: new Date(),
+    }
+    : coffee)
+  fs.writeFileSync(coffeesDBFile, JSON.stringify(newCoffeeFile), 'utf8')
+  return newCoffeeFile[coffeeIndex]
+}
+
+function postNewCoffee(data) {
+  const coffeesData = getCoffeesData();
+  let max = 0
+  for (let i = 0; i < coffeesData.length; i++) {
+    const element = coffeesData[i];
+    if (parseInt(element.id)> max) max = parseInt(element.id)
+  }
+  const newRecord = {...data, createdTime: new Date(), id: max+1 }
+  const newCoffeeFile = coffeesData.concat(newRecord)
+  fs.writeFileSync(coffeesDBFile, JSON.stringify(newCoffeeFile), 'utf8')
+  return newRecord
 }
 
 function getAllCoffees() {
@@ -38,6 +70,8 @@ module.exports = {
   getCoffeesData,
   getCoffeeById,
   getAllCoffees,
+  putCoffeeById,
+  postNewCoffee,
   getCoffeesByCategory,
   getCoffeeCategories
 }
