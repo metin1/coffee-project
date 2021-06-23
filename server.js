@@ -1,9 +1,6 @@
 const express = require('express');
 const path = require('path');
 const app = express();
-const { getAllCoffees, getCoffeeById, getCoffeesByCategory, getCoffeeCategories } = require('./utils/coffee-util');
-
-// require('dotenv').config();
 
 app.use(express.json());
 
@@ -21,9 +18,10 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 // Start listening at port 5000
+const HOST = '0.0.0.0';
 const PORT = process.env.PORT || 5000;
-	app.listen(PORT, () => {
-	console.log(`Server listening on port ${PORT}`);
-});
+app.listen(PORT, HOST)
+
+console.log(`Running on http://${HOST}:${PORT}`);
 
 module.exports = app

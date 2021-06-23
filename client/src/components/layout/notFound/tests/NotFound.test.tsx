@@ -5,7 +5,8 @@ import {
 import { createMemoryHistory } from 'history'
 import { Router } from 'react-router-dom'
 
-import NotFound from './NotFound'
+import NotFound from '../NotFound'
+
 
 // Landing Page Main Part Test
 test('should NotFound page shown and text content as expected', () => {

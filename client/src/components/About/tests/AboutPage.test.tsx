@@ -5,7 +5,7 @@ import {
 import { createMemoryHistory } from 'history'
 import { Router } from 'react-router-dom'
 
-import AboutPage from './AboutPage'
+import AboutPage from '../AboutPage'
 
 // Landing Page Main Part Test
 test('should NotFound page shown and text content as expected', () => {

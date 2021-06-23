@@ -8,7 +8,6 @@ const {
 
 async function getCoffees (req, res) {
   const coffees = await getAllCoffees();
-
   // If no coffee records
   if (!coffees)
     return res.status(400).json({ error: "Coffees Not Found" });
@@ -16,10 +15,10 @@ async function getCoffees (req, res) {
   res.status(200).json(coffees);
 }
 
+
 async function getCoffeesById (req, res)  {
   const id = req.params.id;
   const coffees = await getCoffeeById(id);
-
   // if no coffee record found by requested id
   if (coffees === undefined)
     return res.status(404).json({ error: "Not Found" });
@@ -27,9 +26,9 @@ async function getCoffeesById (req, res)  {
   res.status(200).json(coffees);
 }
 
+
 async function updateCoffeeById (req, res)  {
   const id = req.params.id;
-
   // if no body data return invalid input
   if (!req.body)
     return res.status(400).json({ error: "Invalid Input" });
@@ -42,6 +41,7 @@ async function updateCoffeeById (req, res)  {
   res.status(200).json(result);
 }
 
+
 async function createCoffeeRecord(req, res) {
   // if no body data return invalid input
   if (!req.body)
@@ -50,6 +50,7 @@ async function createCoffeeRecord(req, res) {
 
   res.status(201).json(result);
 }
+
 
 async function deleteCoffeeRecord(req, res) {
   const id = req.params.id;
@@ -63,6 +64,7 @@ async function deleteCoffeeRecord(req, res) {
 
   res.status(204).json({});
 }
+
 
 module.exports = {
   getCoffees,

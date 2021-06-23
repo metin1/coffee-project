@@ -5,6 +5,9 @@
 # This site coding purpose
 This site has been coded for job interview case for [Kloia](https://www.kloia.com/) company.
 
+# Demo Page
+[Click for demo site.](https://kloia-coffee-corp.herokuapp.com/)
+
 ### Features
 
 - Backend RestApi, and easyly getting data with endpoints.

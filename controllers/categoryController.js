@@ -7,12 +7,14 @@ const { getCoffeesByCategory, getCoffeeCategories } = require('../utils/coffee-u
     res.status(200).json(categories);
   }
 
+
   async function getCoffeesByCategoryName (req, res)  {
     const category = req.params.category;
     const coffees = await getCoffeesByCategory(category);
     if (!coffees)res.status(400).json({ error: "Coffee not found with this category" });
     res.status(200).json(coffees);
   }
+
 
 module.exports = {
   getCategories,
