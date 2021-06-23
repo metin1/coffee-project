@@ -2,6 +2,8 @@
 
 ![](https://github.com/metin1/coffee-project/blob/master/client/public/android-chrome-192x192.png?raw=true)
 
+# This site coding purpuse
+This site has been coded for job interview case for [Kloia](https://www.kloia.com/) company.
 
 ### Features
 
@@ -20,6 +22,17 @@
 [TOCM]
 
 [TOC]
+# General View and Pages
+
+### Landing Page
+![](https://github.com/metin1/coffee-project/blob/master/client/src/assets/pages/landingPage.jpg?raw=true)
+
+### Coffee Page
+![](https://github.com/metin1/coffee-project/blob/master/client/src/assets/pages/coffeePage.jpg?raw=true)
+
+### About Us Page
+![](https://github.com/metin1/coffee-project/blob/master/client/src/assets/pages/aboutPage.jpg?raw=true)
+
 
 # Quick Start 🚀
 
