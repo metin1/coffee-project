@@ -14,7 +14,7 @@ body {
   color: var(--secondary-color);
   background-color: var(--background-color);
   font-size: 1.125rem;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'roboto-regular','Roboto', sans-serif;
 }
 
 * {
@@ -27,7 +27,7 @@ h1,
 h2,
 h3
  {
-  font-family: 'Exo', sans-serif;
+  font-family: 'exo-bold','exo', sans-serif;
   color: var(--primary-color);
 }
 
@@ -59,6 +59,7 @@ h3 {
 	text-decoration: none;
   font-weight: 600;
 }
+
 .main {
 	min-height: 100vh;
 }
@@ -261,7 +262,7 @@ h3 {
 .footer img {
   max-height: 60px;
 }
-.footer > div > img {
+.footer > div > a > img {
   max-height: 25px;
   padding-left: 5px;
 }
@@ -276,9 +277,31 @@ h3 {
 }
 
 @media screen and (max-width: 767px) {
+	.landing {
+		background-position: 45% 0;
+	}
+
+	.landing h1 {
+		font-size: 44px;
+	}
+
+
+	.header img {
+		max-height: 30px;
+	}
+
+	.header ul {
+		font-size: 15px;
+	}
+
   .coffee-main {
     flex-direction: column
   }
+
+	.coffee-content {
+		padding-left: 4px;
+		padding-right: 4px;
+	}
 
 	.coffee-menu {
 		min-width: 300px;
@@ -286,5 +309,37 @@ h3 {
 		border-bottom: solid 1px var(--primary-color);
 		margin-bottom: 23px;
 		margin-top: 23px;
+	}
+}
+
+@media screen and (max-width: 479px) {
+	.header img {
+		max-height: 20px;
+	}
+	.landing h1 {
+		font-size: 32px;
+	}
+	.landing p {
+		font-size: 14px;
+	}
+
+	.about-main {
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		text-align: center;
+	}
+	.about-main div:first-child {
+		width: 100%;
+	}
+
+	.about-main div:nth-child(2) {
+		text-align: center;
+	}
+}
+
+@media screen and (min-width: 1440px) {
+	.landing h1 {
+		font-size: 72px;
 	}
 }

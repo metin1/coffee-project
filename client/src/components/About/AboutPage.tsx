@@ -5,15 +5,15 @@ const AboutPage = () => (
     <div className='about-top center-box'>
       <div className='container'>
         <h1>Coffee Corp</h1>
-        <p>“Hot, iced Coffees Made for you”</p>
+        <p data-testid='coffee-motto'>“Hot, iced Coffees Made for you”</p>
       </div>
     </div>
     <div className='container about-main'>
       <div>
         <h1>About Us</h1>
-        <p>
-          Since 2015, Coffee corp provides coffees to customers. We have customers in 5 countries
-          from a wide variety.
+        <p data-testid='about-paragraph'>
+          Since 2015, Coffee corp provides coffees to customers.
+          We have customers in 5 countries from a wide variety.
         </p>
       </div>
       <div>
