@@ -1,7 +1,7 @@
 import React from 'react'
 import {
   render, fireEvent, screen,
-} from '../../test-utils'
+} from '../../test-utils.js'
 
 import CoffeePage from './CoffeePage'
 import coffees from './data/coffees.json'
