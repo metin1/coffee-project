@@ -2,19 +2,19 @@
 
 ![](https://github.com/metin1/coffee-project/blob/master/client/public/android-chrome-192x192.png?raw=true)
 
-# This site coding purpuse
+# This site coding purpose
 This site has been coded for job interview case for [Kloia](https://www.kloia.com/) company.
 
 ### Features
 
 - Backend RestApi, and easyly getting data with endpoints.
-- Get list off coffees, get unique record, change, add and delete record.
+- Get list of coffees, get the unique record, change, add and delete record.
 - Get list of coffee categories
 - Full-tested: With supertest library all backend endpoint and responses tested.
 - React Redux Frontend with react hooks and functional components
-- Responsive design and used OOCSS.
+- Responsive design and used OOCSS as styling.
 - Frontend design with [Figma](https://figma.com/ "Figma") and design [file is here](https://www.figma.com/file/F88DSInAsuh2MdOMb84vEQ/CoofeeCorp?node-id=1%3A652&viewport=-1173%2C-48%2C0.5507400035858154)
-- Frontend tested with React Testing library including redux and react router.
+- Frontend tested with React Testing library including redux and react-router.
 
 
 **Table of Contents**
