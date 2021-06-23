@@ -21,7 +21,9 @@
 		"@typescript-eslint"
 	],
 	"rules": {
-		"no-use-before-define": "off",
+		"@typescript-eslint/explicit-module-boundary-types": "off",		"no-use-before-define": "off",
+		"arrow-parens": ["error", "always"],
+		"object-curly-newline": ["error", { "minProperties": 2 }],
 		"@typescript-eslint/no-use-before-define": [
 			"error"
 		],
@@ -45,6 +47,7 @@
     "bracketSpacing": 0,
 		"arrow-body-style": ["error", "as-needed"],
 		"semi": ["error", "never"],
+		"jsx-quotes": ["error", "prefer-single"],
 		"prefer-single":"off",
 		"prettier/prettier": 0,
 		"no-shadow": "off",

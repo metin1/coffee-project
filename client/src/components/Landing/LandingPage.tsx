@@ -2,9 +2,9 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 const LandingPage = () => (
-  <div className="container landing">
+  <div className='container landing'>
     <h1>TAKE A BREAK</h1>
-    <h1 className="light">DRINK SOME COFFEE</h1>
+    <h1 className='light'>DRINK SOME COFFEE</h1>
 
     <p>
       Forget everything and take a break. Select your coffee, hot or cold, whatever
@@ -12,7 +12,7 @@ const LandingPage = () => (
       again. Feel comfortable have a seat and share this time with your friends.
     </p>
 
-    <Link to="/coffees" className="button">Choose Your Drink</Link>
+    <Link to='/coffees' className='button'>Choose Your Drink</Link>
 
   </div>
 )

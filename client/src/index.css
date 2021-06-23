@@ -41,6 +41,10 @@ h3 {
   font-size: 1.7rem;
 }
 
+.app {
+	min-height: 100vh;
+}
+
 .button {
 	border: none;
   max-width: 200px;
@@ -54,6 +58,9 @@ h3 {
 	outline: none;
 	text-decoration: none;
   font-weight: 600;
+}
+.main {
+	min-height: 100vh;
 }
 
 .container {
@@ -131,15 +138,110 @@ h3 {
 }
 
 .landing .button {
+	display: block;
 	position: relative;
 	top: 40vh;
+	margin-left: auto;
+	margin-right: auto;
 }
+
+/*  Coffee Page */
+.coffee-main {
+	display: flex;
+	flex-direction: row;
+}
+
+.coffee-header {
+	text-align: center;
+}
+
+.coffee-menu {
+	min-width: 240px;
+	border-right: solid 1px var(--primary-color);
+}
+
+.coffee-menu input {
+	height: 30px;
+	min-width: 200px;
+	border-radius: 4px;
+	font-size: 17px;
+}
+
+.coffee-content {
+	padding-left: 32px;
+	padding-right: 2vw;
+}
+
+.coffee-content .coffee-title {
+	font-size: 20px;
+	font-weight: 600;
+	padding-bottom: 13px;
+	color: var(--primary-color);
+}
+
+.coffee-content .coffee-description {
+	padding-top: 12px;
+	padding-bottom: 8px;
+}
+
+.coffee-content .coffee-ingredients {
+	padding-bottom: 64px;
+	font-size: 14px;
+}
+
+.coffee-content .coffee-ingredients span {
+	padding-right: 9px ;
+}
+
+.category-content-item {
+	padding: 12px;
+  font-weight: 600;
+	text-transform: capitalize;
+	cursor: pointer;
+	color: var(--primary-color);
+}
+
+.category-content-item-selected {
+	color: var(--button-color);
+}
+
+.category-content-item:hover {
+	color: var(--secondary-color);
+}
+
 
 /* About page */
 .about-top {
   min-height: 300px;
   background-color: var(--about-color);
 }
+
+.about-top h1,
+.about-top p {
+	text-align: center;
+}
+.about-top p {
+	font-weight: 600;
+}
+
+.about-main {
+	display: flex;
+	justify-content: space-between;
+	flex-direction: row;
+}
+
+.about-main div:first-child {
+	width: 50%;
+}
+
+.about-main div:nth-child(2) {
+	text-align: right;
+}
+
+.about-main div:nth-child(2) p {
+	font-weight: 500;
+}
+
 
 /* header and footer  */
 .header,
@@ -164,9 +266,25 @@ h3 {
   padding-left: 5px;
 }
 
+/*  not-found */
+.not-found {
+	text-align: center;
+}
+
+.not-found h1 {
+	margin-top: 120px;
+}
 
 @media screen and (max-width: 767px) {
-  .main-box {
+  .coffee-main {
     flex-direction: column
   }
+
+	.coffee-menu {
+		min-width: 300px;
+		border-right: none;
+		border-bottom: solid 1px var(--primary-color);
+		margin-bottom: 23px;
+		margin-top: 23px;
+	}
 }
