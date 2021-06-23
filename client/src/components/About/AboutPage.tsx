@@ -5,7 +5,7 @@ const AboutPage = () => (
     <div className='about-top center-box'>
       <div className='container'>
         <h1>Coffee Corp</h1>
-        <p>“Hot, iced Coffees Made for you”</p>
+        <p data-testid='coffee-motto'>“Hot, iced Coffees Made for you”</p>
       </div>
     </div>
     <div className='container about-main'>

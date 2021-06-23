@@ -1,6 +1,4 @@
-import {
-  ActionCreator, Reducer,
-} from 'redux'
+import { Reducer } from 'redux'
 import {
   SET_ALERT, REMOVE_ALERT,
 } from '../actions/types'

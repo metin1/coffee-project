@@ -7,7 +7,7 @@ const CoffeePage = () => {
 
   return (
     <div className='container'>
-      <h1 className='coffee-header'>Our Coffees</h1>
+      <h1 className='coffee-header' data-testid='coffee-head'>Our Coffees</h1>
       <div className='coffee-main' id='coffee-main'>
         <div className='coffee-menu' id='coffee-menu'>
           <input

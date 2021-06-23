@@ -16,13 +16,15 @@ function App() {
     <div className='app'>
       <Provider store={store}>
         <Router>
-          <Header />
-          <Switch>
+          <div>
+            <Header />
             <div className='main'>
-              <Route component={Routes} />
+              <Switch>
+                <Route component={Routes} />
+              </Switch>
             </div>
-          </Switch>
-          <Footer />
+            <Footer />
+          </div>
         </Router>
       </Provider>
     </div>
