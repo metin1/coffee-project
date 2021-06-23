@@ -14,7 +14,7 @@ body {
   color: var(--secondary-color);
   background-color: var(--background-color);
   font-size: 1.125rem;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'roboto-regular','Roboto', sans-serif;
 }
 
 * {
@@ -27,7 +27,7 @@ h1,
 h2,
 h3
  {
-  font-family: 'Exo', sans-serif;
+  font-family: 'exo-bold','exo', sans-serif;
   color: var(--primary-color);
 }
 
