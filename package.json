@@ -12,7 +12,7 @@
     "start": "nodemon server.js",
     "client": "yarn --cwd client start",
     "dev": "concurrently \"yarn start\" \"yarn client\"",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && yarn build --prefix client"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false yarn ---cwd client && yarn build --cwd client"
   },
   "keywords": [
     "Coffee",
