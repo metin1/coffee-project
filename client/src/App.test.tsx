@@ -20,7 +20,6 @@ test('should Landing page text content as expected', () => {
   expect(screen.getByRole('link', { name: 'Choose Your Drink' })).toBeInTheDocument()
 })
 
-
 // Header Menu Test
 test('should navbar menu has two item and contents are same as expected', () => {
   render(<App />)
@@ -38,7 +37,6 @@ test('should navbar menu has two item and contents are same as expected', () => 
   expect(logo).toHaveAttribute('src', 'logo.png')
   expect(logo).toHaveAttribute('alt', 'Header Logo')
 })
-
 
 test('should footer content and images as expected', () => {
   render(<App />)
@@ -68,13 +66,12 @@ test('should footer content and images as expected', () => {
   expect(screen.getByText('Coffee Corp © 2021')).toBeInTheDocument()
 })
 
-
 test('should navigation buttons change page to about us page', () => {
   const history = createMemoryHistory()
   render(
     <Router history={history}>
       <App />
-    </Router>
+    </Router>,
   )
 
   const leftClick = { button: 0 }
@@ -89,7 +86,7 @@ test('should navigation buttons change page to coffees page', () => {
   render(
     <Router history={history}>
       <App />
-    </Router>
+    </Router>,
   )
 
   const leftClick = { button: 0 }

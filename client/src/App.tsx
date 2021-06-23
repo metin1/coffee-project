@@ -1,6 +1,6 @@
 import React from 'react'
 import {
-  BrowserRouter as Router, Route, Switch,
+  BrowserRouter as Router, Route, Switch, useLocation,
 } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import store from './store'
@@ -8,8 +8,6 @@ import store from './store'
 import Footer from './components/layout/footer/Footer'
 import Header from './components/layout/header/Header'
 import Routes from './components/routing/Routes'
-
-import './App.css'
 
 function App() {
   return (

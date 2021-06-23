@@ -14,6 +14,7 @@ const CoffeePage = () => {
             type='text'
             name='search'
             id='coffee-search'
+            placeholder='Search'
             onChange={(e) => setSearch(e.target.value)}
           />
           <CoffeeCategoriesList />
