@@ -1,0 +1,9 @@
+{
+  "extends": "./tsconfig",
+  "compilerOptions": {
+    "module": "commonjs",
+    "allowSyntheticDefaultImports": true,
+    "types": ["node", "jest"],
+  },
+  "include": ["src"]
+}

@@ -1,7 +1,3 @@
-// Alert Action Reducer
-export const SET_ALERT = 'SET_ALERT'
-export const REMOVE_ALERT = 'REMOVE_ALERT'
-
 // Category Action Reducer
 export const GET_CATEGORIES = 'GET_CATEGORIES'
 export const GET_CATEGORY = 'GET_CATEGORY'

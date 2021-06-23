@@ -9,20 +9,20 @@ import Footer from './components/layout/footer/Footer'
 import Header from './components/layout/header/Header'
 import Routes from './components/routing/Routes'
 
-import './App.css'
-
 function App() {
   return (
     <div className='app'>
       <Provider store={store}>
         <Router>
-          <Header />
-          <Switch>
+          <div>
+            <Header />
             <div className='main'>
-              <Route component={Routes} />
+              <Switch>
+                <Route component={Routes} />
+              </Switch>
             </div>
-          </Switch>
-          <Footer />
+            <Footer />
+          </div>
         </Router>
       </Provider>
     </div>

@@ -44,7 +44,7 @@ const CategoryCategoriesList = () => {
           onKeyDown={handleKeyDown}
           role='button'
           tabIndex={0}
-          onClick={(e) => handleClick('all')}
+          onClick={() => handleClick('all')}
         >
           All Coffees
         </div>
