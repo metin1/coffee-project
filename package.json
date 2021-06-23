@@ -10,7 +10,7 @@
   "scripts": {
     "test": "jest --coverage --logHeapUsage --maxWorkers=2 --testPathPattern=__tests__/unit",
     "start": "nodemon server.js",
-    "client": "yarn start --prefix client",
+    "client": "yarn --cwd client start",
     "dev": "concurrently \"yarn server\" \"yarn client\"",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && yarn build --prefix client"
   },
